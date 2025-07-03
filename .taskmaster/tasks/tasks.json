@@ -1,0 +1,434 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Set up Project Structure",
+        "description": "Initialize the project repository with a Vue.js frontend and Python backend structure.",
+        "details": "Create a new project directory. Initialize a Vue.js project using Vue CLI 5.0.8 for the frontend. Set up a Python virtual environment (venv) for the backend. Create a basic folder structure: /frontend, /backend, /input_images, /output_images. Initialize git repository and create .gitignore file.",
+        "testStrategy": "Verify that the project structure is correctly set up. Ensure that Vue.js dev server starts without errors and Python virtual environment is activated successfully.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set up Vue.js frontend structure",
+            "description": "Create the frontend directory structure and initialize a new Vue.js project",
+            "dependencies": [],
+            "details": "Create a 'frontend' directory, use Vue CLI to initialize a new project, set up components folder, and create placeholder files for main views",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Set up Python backend structure",
+            "description": "Create the backend directory structure and initialize a new Python project",
+            "dependencies": [],
+            "details": "Create a 'backend' directory, set up a virtual environment, create main.py, requirements.txt, and organize into modules (e.g., routes, models, services)",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Initialize version control",
+            "description": "Set up Git repository and create initial commit",
+            "dependencies": [
+              1,
+              2
+            ],
+            "details": "Initialize Git repository, create .gitignore file, add all files, and make initial commit. Create README.md with project overview",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Create project documentation structure",
+            "description": "Set up documentation folders and initial files",
+            "dependencies": [
+              3
+            ],
+            "details": "Create a 'docs' directory, add folders for API documentation, user guides, and development guidelines. Create placeholder files for each section",
+            "status": "done",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Implement Backend API Framework",
+        "description": "Set up a Python backend API using Flask to handle image uploads, script execution, and image retrieval.",
+        "details": "Use Flask 2.3.2 to create a RESTful API. Set up routes for image upload (/upload), script execution (/execute), image listing (/images), and script cancellation (/cancel). Use Flask-CORS 3.0.10 to handle CORS. Implement basic error handling and logging using Python's built-in logging module.",
+        "testStrategy": "Write unit tests using pytest 7.3.1 for each API endpoint. Ensure proper response codes and data formats. Test error handling scenarios.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set up Flask project structure",
+            "description": "Initialize the Flask project and create the basic directory structure for the API",
+            "dependencies": [],
+            "details": "Create a new directory for the project, set up a virtual environment, install Flask, and create the main app.py file with basic Flask configuration",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Implement core API endpoints",
+            "description": "Create the main API routes for OmniGen2 UI application as per the PRD",
+            "dependencies": [
+              1
+            ],
+            "details": "Implement endpoints for user authentication, project management, model training, and result retrieval. Use Flask's route decorators and appropriate HTTP methods",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Add CORS handling",
+            "description": "Implement Cross-Origin Resource Sharing (CORS) to allow requests from the frontend",
+            "dependencies": [
+              2
+            ],
+            "details": "Install Flask-CORS extension, configure CORS settings in the Flask app, and apply CORS headers to all routes or specific endpoints as needed",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Implement error handling and logging",
+            "description": "Set up global error handling and logging mechanisms for the API",
+            "dependencies": [
+              2
+            ],
+            "details": "Create custom error handlers for different types of exceptions, implement a logging system to track API usage and errors, and ensure proper error responses are sent to the client",
+            "status": "done",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Write unit tests for API endpoints",
+            "description": "Develop a comprehensive test suite for the implemented API endpoints",
+            "dependencies": [
+              2,
+              3,
+              4
+            ],
+            "details": "Use Flask's testing tools to write unit tests for each endpoint, including positive and negative scenarios. Ensure proper test coverage for error handling and edge cases",
+            "status": "done",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Implement Image Upload Functionality",
+        "description": "Create an API endpoint and corresponding frontend component for image uploads.",
+        "details": "Use Flask-Uploads 0.2.1 to handle file uploads in the backend. Create a Vue component using Vue 3 Composition API for file upload. Use Axios 1.4.0 for HTTP requests. Implement drag-and-drop functionality using vue-dropzone 3.0.1. Store uploaded images in the /input_images directory with unique filenames.",
+        "testStrategy": "Test various file types and sizes. Ensure proper error handling for invalid files. Verify that uploaded images are correctly stored and accessible.",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": []
+      },
+      {
+        "id": 4,
+        "title": "Develop Image Listing and Preview Feature",
+        "description": "Implement functionality to list and preview uploaded and generated images.",
+        "details": "Create an API endpoint to list images from both input and output directories. Implement a Vue component to display image thumbnails using vue-gallery-slideshow 2.1.1. Use vue-lazyload 3.0.0 for efficient image loading. Implement pagination if the number of images is large.",
+        "testStrategy": "Test with various numbers of images. Ensure correct sorting and filtering. Verify that previews load correctly and efficiently.",
+        "priority": "medium",
+        "dependencies": [
+          3
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 5,
+        "title": "Implement OmniGen2 Model Parameter Configuration",
+        "description": "Create a form to allow users to configure parameters for the OmniGen2 model script.",
+        "details": "Create a Vue form component using Vuelidate 2.0.3 for form validation. Include fields for all parameters in the bash script (num_inference_step, height, width, text_guidance_scale, image_guidance_scale, instruction). Use vue-multiselect 2.1.7 for image selection. Implement real-time validation and error messaging.",
+        "testStrategy": "Test form submission with various valid and invalid inputs. Ensure all parameters are correctly passed to the backend. Verify error handling and validation feedback.",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "in-progress",
+        "subtasks": []
+      },
+      {
+        "id": 6,
+        "title": "Develop Script Execution Endpoint",
+        "description": "Create an API endpoint to execute the OmniGen2 bash script with provided parameters.",
+        "details": "Implement a Flask route to receive parameters and execute the bash script. Use subprocess module to run the bash script. Implement proper error handling and logging. Generate a unique UUID for the output image filename using uuid module. Ensure the script is executed asynchronously to not block the server.",
+        "testStrategy": "Test script execution with various parameter combinations. Verify that the script runs successfully and produces output. Test error scenarios and ensure proper error reporting.",
+        "priority": "high",
+        "dependencies": [
+          2,
+          5
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 7,
+        "title": "Implement Progress Tracking for Script Execution",
+        "description": "Develop a mechanism to track and report the progress of the bash script execution.",
+        "details": "Modify the bash script to output progress information. Use Flask-SocketIO 5.3.3 to implement real-time progress updates. Create a Vue component using vue-socket.io 3.0.10 to display progress. Implement a progress bar using vue-progressbar 0.7.5.",
+        "testStrategy": "Test progress reporting with various script execution times. Ensure accurate and real-time progress updates. Verify that the progress bar correctly reflects the script's status.",
+        "priority": "medium",
+        "dependencies": [
+          6
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Modify bash script for progress tracking",
+            "description": "Update the existing bash script to include progress reporting functionality",
+            "dependencies": [],
+            "details": "Add echo statements at key points in the script to report progress percentages. Implement a function to calculate and output progress based on completed steps. Ensure the script outputs progress in a consistent format for easy parsing.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Implement backend socket for progress updates",
+            "description": "Create a WebSocket server in the backend to receive and broadcast progress updates",
+            "dependencies": [
+              1
+            ],
+            "details": "Set up a WebSocket server using a library like Socket.IO. Create an endpoint to receive progress updates from the bash script. Implement logic to broadcast these updates to connected clients in real-time.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Integrate WebSocket client in frontend",
+            "description": "Add WebSocket client functionality to the frontend application",
+            "dependencies": [
+              2
+            ],
+            "details": "Install and configure a WebSocket client library (e.g., Socket.IO-client) in the frontend. Implement connection logic to establish a WebSocket connection with the backend. Set up event listeners to receive progress updates from the server.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Create progress bar component",
+            "description": "Develop a reusable progress bar component for the frontend",
+            "dependencies": [],
+            "details": "Design and implement a progress bar component using the frontend framework (e.g., React, Vue, or Angular). Include features like percentage display, color changes based on progress, and smooth animations. Ensure the component can be easily updated with new progress values.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Implement real-time update handling",
+            "description": "Create logic to update the UI in real-time based on received progress updates",
+            "dependencies": [
+              3,
+              4
+            ],
+            "details": "Develop a state management solution to store and update the current progress. Implement logic to update the progress bar component when new updates are received via WebSocket. Add any necessary error handling and reconnection logic for WebSocket disconnections.",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Implement Script Cancellation Feature",
+        "description": "Add functionality to cancel the bash script execution.",
+        "details": "Create an API endpoint for script cancellation. Use Python's multiprocessing module to manage script execution in a separate process. Implement a mechanism to terminate the process when cancellation is requested. Update the frontend to include a cancellation button in the progress tracking component.",
+        "testStrategy": "Test cancellation at various stages of script execution. Ensure resources are properly cleaned up after cancellation. Verify that the UI correctly reflects the cancelled state.",
+        "priority": "medium",
+        "dependencies": [
+          6,
+          7
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 9,
+        "title": "Develop Main Application Interface",
+        "description": "Create the main application interface integrating all components.",
+        "details": "Design and implement the main Vue component. Use Vue Router 4.2.2 for navigation. Implement a responsive layout using Vuetify 3.3.3. Ensure all components (image upload, parameter configuration, progress tracking, image listing) are properly integrated and communicate effectively.",
+        "testStrategy": "Conduct end-to-end testing of the entire application flow. Verify that all components interact correctly. Test responsiveness across different screen sizes.",
+        "priority": "high",
+        "dependencies": [
+          3,
+          4,
+          5,
+          7,
+          8
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Implement Error Handling and Notifications",
+        "description": "Develop a comprehensive error handling system and user notification mechanism.",
+        "details": "Implement global error handling in Vue using errorCaptured hook. Use vue-toastification 2.0.0-rc.5 for displaying error messages and notifications. Create a centralized error logging service in the backend. Ensure all API endpoints return appropriate error responses.",
+        "testStrategy": "Simulate various error scenarios and verify proper error messages. Test that errors are logged correctly in the backend. Ensure notifications are displayed correctly and are dismissable.",
+        "priority": "medium",
+        "dependencies": [
+          9
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 11,
+        "title": "Optimize Image Processing and Storage",
+        "description": "Implement efficient image processing and storage mechanisms.",
+        "details": "Use Pillow 9.5.0 for image processing in the backend. Implement image resizing for thumbnails. Use a caching mechanism (e.g., Flask-Caching 2.0.2) to store processed images. Implement lazy loading of images in the frontend. Consider implementing image compression if needed.",
+        "testStrategy": "Test image processing with various image types and sizes. Measure and compare load times with and without optimizations. Verify that image quality is maintained after processing.",
+        "priority": "medium",
+        "dependencies": [
+          3,
+          4
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 12,
+        "title": "Implement User Session Management",
+        "description": "Add basic session management for the single anonymous user.",
+        "details": "Use Flask-Session 0.5.0 to manage server-side sessions. Implement a mechanism to associate uploaded and generated images with the current session. Ensure that users can only access their own images. Clear session data and associated images after a period of inactivity.",
+        "testStrategy": "Test session creation and expiration. Verify that users can only access their own images. Test behavior when switching between multiple browser tabs.",
+        "priority": "low",
+        "dependencies": [
+          2
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 13,
+        "title": "Develop API Documentation",
+        "description": "Create comprehensive API documentation for the backend endpoints.",
+        "details": "Use Swagger UI 4.19.0 to generate interactive API documentation. Implement proper docstrings in Python code. Use Flask-RESTX 1.1.0 to integrate Swagger with Flask. Ensure all endpoints, request parameters, and response formats are clearly documented.",
+        "testStrategy": "Verify that all endpoints are correctly documented. Test the interactive features of the Swagger UI. Ensure the documentation is up-to-date with the latest API changes.",
+        "priority": "low",
+        "dependencies": [
+          2,
+          3,
+          4,
+          6,
+          8
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 14,
+        "title": "Implement Logging and Monitoring",
+        "description": "Set up a logging and monitoring system for both frontend and backend.",
+        "details": "Use Python's logging module for backend logging. Implement log rotation using RotatingFileHandler. For frontend logging, use vue-logger-plugin 2.2.3. Set up Sentry 1.21.1 for error tracking and performance monitoring in both frontend and backend.",
+        "testStrategy": "Verify that logs are correctly generated and rotated. Test Sentry integration by triggering various error scenarios. Ensure that sensitive information is not logged.",
+        "priority": "low",
+        "dependencies": [
+          9,
+          10
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 15,
+        "title": "Perform Security Audit and Optimization",
+        "description": "Conduct a security audit of the application and implement necessary security measures.",
+        "details": "Use Flask-Talisman 1.0.0 to set security headers. Implement input validation and sanitization using cerberus 1.3.4. Use Flask-Limiter 3.3.1 for rate limiting. Ensure all user inputs are properly escaped to prevent XSS attacks. Use python-dotenv 1.0.0 to manage environment variables for sensitive information.",
+        "testStrategy": "Conduct penetration testing using tools like OWASP ZAP. Verify that all security headers are correctly set. Test rate limiting functionality. Attempt common attack vectors (XSS, CSRF, etc.) and ensure they are mitigated.",
+        "priority": "high",
+        "dependencies": [
+          1,
+          2,
+          3,
+          6,
+          12
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Implement Security Headers",
+            "description": "Set up and configure essential security headers for the application",
+            "dependencies": [],
+            "details": "Implement headers such as Content-Security-Policy, X-XSS-Protection, X-Frame-Options, and Strict-Transport-Security. Use a security header middleware or manually set these in the server configuration.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 2,
+            "title": "Set Up Input Validation",
+            "description": "Implement robust input validation for all user inputs",
+            "dependencies": [],
+            "details": "Use a validation library or create custom validation functions. Validate and sanitize all user inputs, including form data, query parameters, and file uploads. Implement both client-side and server-side validation.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 3,
+            "title": "Implement Rate Limiting",
+            "description": "Set up rate limiting to prevent abuse and DDoS attacks",
+            "dependencies": [],
+            "details": "Use a rate limiting middleware or implement a custom solution. Set appropriate limits for different API endpoints and implement IP-based rate limiting where necessary.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 4,
+            "title": "Implement XSS Prevention Measures",
+            "description": "Set up measures to prevent Cross-Site Scripting (XSS) attacks",
+            "dependencies": [
+              2
+            ],
+            "details": "Implement context-aware output encoding, use Content Security Policy (CSP) headers, and sanitize user-generated content before rendering. Use security libraries designed to prevent XSS attacks.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 5,
+            "title": "Set Up Environment Variable Management",
+            "description": "Implement secure management of environment variables",
+            "dependencies": [],
+            "details": "Use a .env file for local development and secure environment variable management for production. Ensure sensitive information like API keys and database credentials are never hardcoded or committed to version control.",
+            "status": "pending",
+            "testStrategy": ""
+          },
+          {
+            "id": 6,
+            "title": "Conduct Penetration Testing",
+            "description": "Perform thorough penetration testing on the application",
+            "dependencies": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "details": "Use automated security scanning tools and perform manual penetration testing. Test for common vulnerabilities such as SQL injection, XSS, CSRF, and file upload vulnerabilities. Document and address all identified security issues.",
+            "status": "pending",
+            "testStrategy": ""
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-07-03T16:01:04.288Z",
+      "updated": "2025-07-03T18:45:42.638Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

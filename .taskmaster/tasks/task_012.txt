@@ -1,0 +1,11 @@
+# Task ID: 12
+# Title: Implement User Session Management
+# Status: pending
+# Dependencies: 2
+# Priority: low
+# Description: Add basic session management for the single anonymous user.
+# Details:
+Use Flask-Session 0.5.0 to manage server-side sessions. Implement a mechanism to associate uploaded and generated images with the current session. Ensure that users can only access their own images. Clear session data and associated images after a period of inactivity.
+
+# Test Strategy:
+Test session creation and expiration. Verify that users can only access their own images. Test behavior when switching between multiple browser tabs.

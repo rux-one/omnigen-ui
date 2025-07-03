@@ -1,0 +1,11 @@
+# Task ID: 8
+# Title: Implement Script Cancellation Feature
+# Status: pending
+# Dependencies: 6, 7
+# Priority: medium
+# Description: Add functionality to cancel the bash script execution.
+# Details:
+Create an API endpoint for script cancellation. Use Python's multiprocessing module to manage script execution in a separate process. Implement a mechanism to terminate the process when cancellation is requested. Update the frontend to include a cancellation button in the progress tracking component.
+
+# Test Strategy:
+Test cancellation at various stages of script execution. Ensure resources are properly cleaned up after cancellation. Verify that the UI correctly reflects the cancelled state.

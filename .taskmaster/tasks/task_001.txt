@@ -1,0 +1,11 @@
+# Task ID: 1
+# Title: Set up Project Structure
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Initialize the project repository with a Vue.js frontend and Python backend structure.
+# Details:
+Create a new project directory. Initialize a Vue.js project using Vue CLI 5.0.8 for the frontend. Set up a Python virtual environment (venv) for the backend. Create a basic folder structure: /frontend, /backend, /input_images, /output_images. Initialize git repository and create .gitignore file.
+
+# Test Strategy:
+Verify that the project structure is correctly set up. Ensure that Vue.js dev server starts without errors and Python virtual environment is activated successfully.

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1751568864645" clover="3.2.0">
+  <project timestamp="1751568864645" name="All files">
+    <metrics statements="223" coveredstatements="0" conditionals="218" coveredconditionals="0" methods="58" coveredmethods="0" elements="499" coveredelements="0" complexity="0" loc="223" ncloc="223" packages="3" files="8" classes="8"/>
+    <package name="src">
+      <metrics statements="28" coveredstatements="0" conditionals="16" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <file name="App.vue" path="/home/bart/code/omnigen-ui/frontend/src/App.vue">
+        <metrics statements="28" coveredstatements="0" conditionals="16" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="64" count="0" type="stmt"/>
+        <line num="67" count="0" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="69" count="0" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="81" count="0" type="stmt"/>
+        <line num="84" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="95" count="0" type="stmt"/>
+        <line num="96" count="0" type="stmt"/>
+        <line num="97" count="0" type="stmt"/>
+        <line num="98" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="104" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="109" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="114" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="118" count="0" type="stmt"/>
+        <line num="123" count="0" type="stmt"/>
+        <line num="128" count="0" type="stmt"/>
+        <line num="129" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="133" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components">
+      <metrics statements="176" coveredstatements="0" conditionals="194" coveredconditionals="0" methods="39" coveredmethods="0"/>
+      <file name="ErrorBoundary.vue" path="/home/bart/code/omnigen-ui/frontend/src/components/ErrorBoundary.vue">
+        <metrics statements="13" coveredstatements="0" conditionals="12" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="82" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="87" count="0" type="stmt"/>
+        <line num="91" count="0" type="stmt"/>
+        <line num="94" count="0" type="stmt"/>
+        <line num="98" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="99" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="102" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="107" count="0" type="stmt"/>
+      </file>
+      <file name="HelloWorld.vue" path="/home/bart/code/omnigen-ui/frontend/src/components/HelloWorld.vue">
+        <metrics statements="10" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+      </file>
+      <file name="ImageGallery.vue" path="/home/bart/code/omnigen-ui/frontend/src/components/ImageGallery.vue">
+        <metrics statements="34" coveredstatements="0" conditionals="36" coveredconditionals="0" methods="10" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="148" count="0" type="stmt"/>
+        <line num="150" count="0" type="stmt"/>
+        <line num="153" count="0" type="stmt"/>
+        <line num="154" count="0" type="stmt"/>
+        <line num="155" count="0" type="stmt"/>
+        <line num="158" count="0" type="stmt"/>
+        <line num="161" count="0" type="stmt"/>
+        <line num="164" count="0" type="stmt"/>
+        <line num="168" count="0" type="stmt"/>
+        <line num="172" count="0" type="stmt"/>
+        <line num="176" count="0" type="stmt"/>
+        <line num="179" count="0" type="stmt"/>
+        <line num="180" count="0" type="stmt"/>
+        <line num="183" count="0" type="stmt"/>
+        <line num="184" count="0" type="stmt"/>
+        <line num="187" count="0" type="stmt"/>
+        <line num="190" count="0" type="stmt"/>
+        <line num="193" count="0" type="stmt"/>
+        <line num="194" count="0" type="stmt"/>
+        <line num="197" count="0" type="stmt"/>
+        <line num="200" count="0" type="stmt"/>
+        <line num="202" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="206" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="211" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="214" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="218" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="221" count="0" type="stmt"/>
+        <line num="227" count="0" type="stmt"/>
+        <line num="235" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="241" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="250" count="0" type="stmt"/>
+      </file>
+      <file name="ImageGeneration.vue" path="/home/bart/code/omnigen-ui/frontend/src/components/ImageGeneration.vue">
+        <metrics statements="40" coveredstatements="0" conditionals="56" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="236" count="0" type="stmt"/>
+        <line num="238" count="0" type="stmt"/>
+        <line num="241" count="0" type="stmt"/>
+        <line num="242" count="0" type="stmt"/>
+        <line num="243" count="0" type="stmt"/>
+        <line num="246" count="0" type="stmt"/>
+        <line num="249" count="0" type="stmt"/>
+        <line num="253" count="0" type="stmt"/>
+        <line num="257" count="0" type="stmt"/>
+        <line num="261" count="0" type="stmt"/>
+        <line num="262" count="0" type="stmt"/>
+        <line num="263" count="0" type="stmt"/>
+        <line num="266" count="0" type="stmt"/>
+        <line num="269" count="0" type="stmt"/>
+        <line num="273" count="0" type="stmt"/>
+        <line num="276" count="0" type="stmt"/>
+        <line num="280" count="0" type="stmt"/>
+        <line num="283" count="0" type="stmt"/>
+        <line num="286" count="0" type="stmt"/>
+        <line num="287" count="0" type="stmt"/>
+        <line num="291" count="0" type="stmt"/>
+        <line num="295" count="0" type="stmt"/>
+        <line num="298" count="0" type="stmt"/>
+        <line num="302" count="0" type="stmt"/>
+        <line num="306" count="0" type="stmt"/>
+        <line num="309" count="0" type="stmt"/>
+        <line num="310" count="0" type="stmt"/>
+        <line num="314" count="0" type="stmt"/>
+        <line num="317" count="0" type="stmt"/>
+        <line num="322" count="0" type="stmt"/>
+        <line num="323" count="0" type="cond" truecount="0" falsecount="8"/>
+        <line num="324" count="0" type="stmt"/>
+        <line num="329" count="0" type="stmt"/>
+        <line num="335" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="346" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="355" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="361" count="0" type="stmt"/>
+      </file>
+      <file name="ImageUpload.vue" path="/home/bart/code/omnigen-ui/frontend/src/components/ImageUpload.vue">
+        <metrics statements="28" coveredstatements="0" conditionals="34" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="207" count="0" type="stmt"/>
+        <line num="209" count="0" type="stmt"/>
+        <line num="212" count="0" type="stmt"/>
+        <line num="213" count="0" type="stmt"/>
+        <line num="214" count="0" type="stmt"/>
+        <line num="217" count="0" type="stmt"/>
+        <line num="221" count="0" type="stmt"/>
+        <line num="225" count="0" type="stmt"/>
+        <line num="228" count="0" type="stmt"/>
+        <line num="232" count="0" type="stmt"/>
+        <line num="235" count="0" type="stmt"/>
+        <line num="236" count="0" type="stmt"/>
+        <line num="239" count="0" type="stmt"/>
+        <line num="242" count="0" type="stmt"/>
+        <line num="245" count="0" type="stmt"/>
+        <line num="248" count="0" type="stmt"/>
+        <line num="253" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="257" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="258" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="260" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="261" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="265" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="275" count="0" type="stmt"/>
+        <line num="284" count="0" type="stmt"/>
+      </file>
+      <file name="ModelConfig.vue" path="/home/bart/code/omnigen-ui/frontend/src/components/ModelConfig.vue">
+        <metrics statements="51" coveredstatements="0" conditionals="54" coveredconditionals="0" methods="11" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="342" count="0" type="stmt"/>
+        <line num="344" count="0" type="stmt"/>
+        <line num="347" count="0" type="stmt"/>
+        <line num="348" count="0" type="stmt"/>
+        <line num="349" count="0" type="stmt"/>
+        <line num="352" count="0" type="stmt"/>
+        <line num="355" count="0" type="stmt"/>
+        <line num="358" count="0" type="stmt"/>
+        <line num="361" count="0" type="stmt"/>
+        <line num="362" count="0" type="stmt"/>
+        <line num="365" count="0" type="stmt"/>
+        <line num="366" count="0" type="stmt"/>
+        <line num="369" count="0" type="stmt"/>
+        <line num="373" count="0" type="stmt"/>
+        <line num="376" count="0" type="stmt"/>
+        <line num="380" count="0" type="stmt"/>
+        <line num="383" count="0" type="stmt"/>
+        <line num="386" count="0" type="stmt"/>
+        <line num="389" count="0" type="stmt"/>
+        <line num="392" count="0" type="stmt"/>
+        <line num="396" count="0" type="stmt"/>
+        <line num="399" count="0" type="stmt"/>
+        <line num="403" count="0" type="stmt"/>
+        <line num="406" count="0" type="stmt"/>
+        <line num="410" count="0" type="stmt"/>
+        <line num="413" count="0" type="stmt"/>
+        <line num="416" count="0" type="stmt"/>
+        <line num="419" count="0" type="stmt"/>
+        <line num="422" count="0" type="stmt"/>
+        <line num="426" count="0" type="stmt"/>
+        <line num="429" count="0" type="stmt"/>
+        <line num="430" count="0" type="stmt"/>
+        <line num="433" count="0" type="stmt"/>
+        <line num="437" count="0" type="stmt"/>
+        <line num="438" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="439" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="445" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="464" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="467" count="0" type="stmt"/>
+        <line num="471" count="0" type="stmt"/>
+        <line num="481" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="489" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="503" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="519" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="533" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="550" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="19" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="11" coveredmethods="0"/>
+      <file name="api.js" path="/home/bart/code/omnigen-ui/frontend/src/utils/api.js">
+        <metrics statements="19" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="11" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="52" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="75" count="0" type="stmt"/>
+        <line num="80" count="0" type="stmt"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

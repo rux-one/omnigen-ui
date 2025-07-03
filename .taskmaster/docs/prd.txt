@@ -1,0 +1,54 @@
+<context>
+# Overview  
+Simple web application to help generate images with the OmniGen2 model. (bash script)
+
+# Core Features  
+The application should have the following features:
+- Upload images and list references to them
+- Ability to configure any parameters of the model's bash script (below explained in details)
+- Ability to list and preview generated images
+- Ability to display progress of the bash script execution
+- Ability to cancel the bash script execution
+
+# Usage of the bash script
+```
+# !/bin/bash
+SHELL_FOLDER=$(cd "$(dirname "$0")";pwd)
+cd $SHELL_FOLDER
+
+model_path="OmniGen2/OmniGen2"
+python inference.py \
+--model_path $model_path \
+--num_inference_step 50 \
+--height 1024 \
+--width 1024 \
+--text_guidance_scale 5.0 \
+--image_guidance_scale 2.0 \
+--instruction "Put the animal from the second picture into the street depicted by the first picture." \
+--input_image_path example_images/piotrkowska.jpg example_images/boar.jpg \
+--output_image_path outputs/output_in_context_generation.png \
+```
+
+# User Experience  
+- Single, anonymous user in the first iteration
+- User uploads 1+ images and can selected them from the multi-select dropdown for the model to be fed
+- Output image filename is a random uuid
+- Images are stored in input & output directories accordingly
+</context>
+<PRD>
+# Technical Architecture  
+- Python in the backend
+- VueJS in the frontend
+- Minmalistic, clean UI
+- APIs and integrations
+- the `inference.py` already exists
+
+# Development Roadmap  
+- MVP requirements
+- Future enhancements
+- Do not think about timelines whatsoever -- all that matters is scope and detailing exactly what needs to be build in each phase so it can later be cut up into tasks]
+
+
+# Risks and Mitigations  
+- None, this is exploratory dev.
+</PRD>
