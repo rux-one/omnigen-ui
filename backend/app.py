@@ -458,5 +458,7 @@ def cancel_script(process_id):
         })
 
 if __name__ == '__main__':
-    logger.info("Starting OmniGen2 UI backend server")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    # Get port from environment variable or use default
+    port = int(os.environ.get('BACKEND_PORT', 5000))
+    logger.info(f"Starting OmniGen2 UI backend server on port {port}")
+    app.run(debug=True, host='0.0.0.0', port=port)
