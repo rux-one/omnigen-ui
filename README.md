@@ -109,10 +109,30 @@ You can create these .env files based on the provided .env.example files in each
    npm run build
    ```
 
+## Configuration
+
+### Backend Configuration
+
+The backend server can be configured using environment variables. Create a `.env` file in the `backend` directory based on the `.env.example` template.
+
+| Variable | Description | Default |
+|----------|-------------|--------|
+| `BACKEND_PORT` | Port on which the backend server will run | `5000` |
+| `INFERENCE_SCRIPT_PATH` | Path to the inference script | `inference.py` |
+
+### Frontend Configuration
+
+The frontend can be configured using environment variables. Create a `.env` file in the `frontend` directory based on the `.env.example` template.
+
+| Variable | Description | Default |
+|----------|-------------|--------|
+| `PORT` | Port on which the frontend development server will run | `8080` |
+| `VUE_APP_API_BASE_URL` | Full URL to the backend API (including protocol, host, port, and base path) | `http://localhost:5000/api` |
+
 ## Usage
 
 1. Start both the backend and frontend servers
-2. Open your browser and navigate to http://localhost:8080
+2. Open your browser and navigate to the frontend URL (default: http://localhost:8080)
 3. Upload input images
 4. Configure model parameters
 5. Generate images with custom instructions

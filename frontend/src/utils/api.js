@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 // Base API configuration
+// Use the environment variable for the backend URL or fall back to default
 const API_BASE_URL = process.env.VUE_APP_API_BASE_URL || 'http://localhost:5000/api';
 
 // Create axios instance with default config
