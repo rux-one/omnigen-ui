@@ -47,6 +47,11 @@
               <span>{{ formatFileSize(image.size) }}</span>
               <span>{{ formatDate(image.created) }}</span>
             </div>
+            <div class="image-actions">
+              <button class="delete-button" @click.stop="confirmDelete(image)" title="Delete image">
+                <span class="delete-icon">🗑️</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -67,7 +72,10 @@
             <p>Size: {{ formatFileSize(selectedImage.size) }}</p>
             <p>Created: {{ formatDate(selectedImage.created, true) }}</p>
           </div>
-          <a :href="selectedImage.url" download class="download-button">Download</a>
+          <div class="image-action-buttons">
+            <a :href="selectedImage.url" download class="download-button">Download</a>
+            <button class="delete-button-modal" @click="confirmDelete(selectedImage)">Delete</button>
+          </div>
         </div>
       </div>
     </div>
@@ -147,6 +155,35 @@ export default {
       emit('change-tab', 'generate');
     };
     
+    const confirmDelete = (image) => {
+      if (confirm(`Are you sure you want to delete ${image.filename}?`)) {
+        deleteImage(image);
+      }
+    };
+    
+    const deleteImage = async (image) => {
+      try {
+        if (activeTab.value === 'input') {
+          await ApiService.deleteInputImage(image.filename);
+        } else {
+          await ApiService.deleteOutputImage(image.filename);
+        }
+        
+        // Remove the image from the array
+        images.value = images.value.filter(img => img.filename !== image.filename);
+        
+        // Close the viewer if the deleted image was being viewed
+        if (selectedImage.value && selectedImage.value.filename === image.filename) {
+          closeImageViewer();
+        }
+        
+        $toast.success(`Image ${image.filename} deleted successfully`);
+      } catch (error) {
+        console.error(`Error deleting image:`, error);
+        $toast.error(`Failed to delete image: ${error.message || 'Unknown error'}`);
+      }
+    };
+    
     // Watch for tab changes to reload images
     watch(activeTab, () => {
       fetchImages();
@@ -167,7 +204,8 @@ export default {
       openImageViewer,
       closeImageViewer,
       goToUpload,
-      goToGenerate
+      goToGenerate,
+      confirmDelete
     };
   }
 };
@@ -285,6 +323,30 @@ h2 {
   color: #666;
 }
 
+.image-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.delete-button:hover {
+  background-color: rgba(231, 76, 60, 0.1);
+}
+
+.delete-icon {
+  font-size: 1rem;
+}
+
 /* Image Viewer Modal */
 .image-viewer-overlay {
   position: fixed;
@@ -376,5 +438,25 @@ h2 {
 
 .download-button:hover {
   background-color: #2980b9;
+}
+
+.image-action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.delete-button-modal {
+  padding: 8px 15px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button-modal:hover {
+  background-color: #c0392b;
 }
 </style>

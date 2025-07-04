@@ -225,6 +225,54 @@ def list_output_images():
     
     return jsonify({"images": images})
 
+# Delete input image endpoint
+@app.route('/api/images/input/<filename>', methods=['DELETE'])
+def delete_input_image(filename):
+    logger.info(f"Delete input image endpoint called for: {filename}")
+    
+    try:
+        # Construct the file path
+        file_path = os.path.join(INPUT_FOLDER, filename)
+        
+        # Check if file exists
+        if not os.path.exists(file_path):
+            logger.error(f"Input image not found: {filename}")
+            return jsonify({"error": "Image not found"}), 404
+        
+        # Delete the file
+        os.remove(file_path)
+        logger.info(f"Successfully deleted input image: {filename}")
+        
+        return jsonify({"message": f"Image {filename} deleted successfully"})
+        
+    except Exception as e:
+        logger.error(f"Error deleting input image {filename}: {str(e)}")
+        return jsonify({"error": f"Error deleting image: {str(e)}"}), 500
+
+# Delete output image endpoint
+@app.route('/api/images/output/<filename>', methods=['DELETE'])
+def delete_output_image(filename):
+    logger.info(f"Delete output image endpoint called for: {filename}")
+    
+    try:
+        # Construct the file path
+        file_path = os.path.join(OUTPUT_FOLDER, filename)
+        
+        # Check if file exists
+        if not os.path.exists(file_path):
+            logger.error(f"Output image not found: {filename}")
+            return jsonify({"error": "Image not found"}), 404
+        
+        # Delete the file
+        os.remove(file_path)
+        logger.info(f"Successfully deleted output image: {filename}")
+        
+        return jsonify({"message": f"Image {filename} deleted successfully"})
+        
+    except Exception as e:
+        logger.error(f"Error deleting output image {filename}: {str(e)}")
+        return jsonify({"error": f"Error deleting image: {str(e)}"}), 500
+
 # Serve image files
 @app.route('/api/images/view/<folder>/<filename>', methods=['GET'])
 def serve_image(folder, filename):

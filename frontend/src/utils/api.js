@@ -76,6 +76,16 @@ class ApiService {
     return apiClient.get('/images/output');
   }
   
+  // Delete input image
+  static async deleteInputImage(filename) {
+    return apiClient.delete(`/images/input/${filename}`);
+  }
+  
+  // Delete output image
+  static async deleteOutputImage(filename) {
+    return apiClient.delete(`/images/output/${filename}`);
+  }
+  
   // Execute script
   static async executeScript(params) {
     return apiClient.post('/execute', params);
