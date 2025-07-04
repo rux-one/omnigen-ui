@@ -6,14 +6,14 @@
       <button 
         class="gallery-tab" 
         :class="{ active: activeTab === 'input' }" 
-        @click="activeTab = 'input'"
+        @click="switchTab('input')"
       >
         Input Images
       </button>
       <button 
         class="gallery-tab" 
         :class="{ active: activeTab === 'output' }" 
-        @click="activeTab = 'output'"
+        @click="switchTab('output')"
       >
         Generated Images
       </button>
@@ -93,7 +93,8 @@ export default {
   
   setup(props, { emit }) {
     const $toast = useToast();
-    const activeTab = ref('output');
+    // Initialize with 'input' tab to show uploaded images first
+    const activeTab = ref('input');
     const loading = ref(true);
     const images = ref([]);
     const selectedImage = ref(null);
@@ -184,6 +185,12 @@ export default {
       }
     };
     
+    // Function to switch tabs and reload images
+    const switchTab = (tab) => {
+      activeTab.value = tab;
+      fetchImages();
+    };
+    
     // Watch for tab changes to reload images
     watch(activeTab, () => {
       fetchImages();
@@ -205,7 +212,8 @@ export default {
       closeImageViewer,
       goToUpload,
       goToGenerate,
-      confirmDelete
+      confirmDelete,
+      switchTab
     };
   }
 };
@@ -228,14 +236,17 @@ h2 {
 }
 
 .gallery-tab {
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
   color: var(--text-color);
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
 }
 
 .gallery-tab:hover {
