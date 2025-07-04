@@ -49,7 +49,7 @@
             </div>
             <div class="image-actions">
               <button class="delete-button" @click.stop="confirmDelete(image)" title="Delete image">
-                <span class="delete-icon">🗑️</span>
+                Delete
               </button>
             </div>
           </div>
@@ -325,26 +325,25 @@ h2 {
 
 .image-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 8px;
+  width: 100%;
 }
 
 .delete-button {
-  background: none;
+  background-color: #e74c3c;
   border: none;
-  color: #e74c3c;
+  color: white;
   cursor: pointer;
-  padding: 4px 8px;
+  padding: 6px 12px;
   border-radius: 4px;
   transition: background-color 0.2s;
+  width: 100%;
+  font-size: 0.9rem;
 }
 
 .delete-button:hover {
-  background-color: rgba(231, 76, 60, 0.1);
-}
-
-.delete-icon {
-  font-size: 1rem;
+  background-color: #c0392b;
 }
 
 /* Image Viewer Modal */
